@@ -1,0 +1,267 @@
+body{
+    position: relative;
+}
+
+.head{
+    margin-top: -1px;
+    display: block;
+    min-height: 60px;
+    padding: 8px;
+    background-color: #ABCDEF;
+    font-color: #622eff;
+}
+.horizontal li{
+    list-style: none;
+    float:left;
+    color: #729fcf;
+}
+
+
+
+.view{
+	width: 95%;
+    margin: 30px auto 30 auto;
+    position: relative;
+    border: 1px solid #d3d7cf;
+    
+}
+.view-row{
+    display: block;
+    padding: 0;
+    margin: 1px;
+    margin-bottom: 2px;
+    position : relative;
+    border-bottom: 1px solid #d3d7cf;
+    user-select:none;
+}
+
+.rowKey{
+    margin: -1px;
+    padding: 10px;
+    min-height: 40px;
+    background-color: #f3f3f3;
+}
+
+.rowKey .div{
+	margin: 0;
+/* 	float: left; */
+}
+
+.rowKey-value{
+	float: left;
+	margin: 0;
+	width: auto;
+}
+
+.rowKey-value-ok{
+	float: left;
+	padding-left: 5px;
+	margin: 0;
+}
+
+.rowKey-clicked{
+}
+
+.tools{
+    margin: 0;
+    float: right;
+    
+    width: auto;
+}
+
+.tools .button{
+	float: right;
+}
+
+
+.cells{
+    display: block;
+/*     padding: 0; */
+    background: #ffffff;
+    width: 100%;
+    margin: 0;	
+    min-height: 86px;
+    position: relative;
+    overflow-x:scroll;
+    overflow-y: auto;
+    overflow-y:hidden;
+  	white-space: nowrap;
+}
+
+.cell{
+    padding: 10px;
+    border: 1px solid #dddddd;
+    margin-left: -5px;
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+}
+
+.cell-clicked{
+    border-top: 2px solid #729fcf;
+
+}
+
+
+.hide{
+    display: none;
+}
+
+.trash-row{
+	position: absolute;
+	bottom: 13px;
+	right: 1px;
+	display: none;
+}
+.tooltip {
+    position: absolute;
+    display: none;
+    z-index: 9900000;
+    outline: none;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.tool-item{
+    float: right;
+}
+.row-item{
+    float: left;
+    padding-left: 50px;
+}
+.headline-item{
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 40px;
+}
+
+.edit{
+    position: absolute;
+    top: 0;
+    right: 0;
+	display: none;
+    float: right;
+}
+
+.value{
+    width: auto;
+    height: auto;
+    resize: none;
+}
+
+.value-mousein{
+    background-color: aqua;
+}
+
+.valuediv{
+    line-height: 20px;
+    background-color: #fff9fb;
+    border: 1px solid #0080FF;
+    font-size: 12px;
+    z-index: 999;
+    width: 50%;
+    height: 50%;
+    min-height:500px;
+    /*margin-left: 20%;*/
+    /*margin-top: 20%;*/
+    left: 20%;
+    top: 20%;
+/*     margin-left: -150px!important; */
+/*     margin-top: -60px!important; */
+    /*margin-top: 0;*/
+    position: absolute;
+}
+.InsertRowdiv{
+	line-height: 20px;
+    background-color: #fff9fb;
+    border: 1px solid #0080FF;
+    font-size: 12px;
+    z-index: 999;
+    width: 400px;
+    height: auto;
+    margin-left: 50%;
+    margin-top: 40%;
+    left: -350px;
+    top: -550px;
+/*     margin-left: -150px!important; */
+/*     margin-top: -60px!important; */
+    /*margin-top: 0;*/
+    position: fixed!important;
+}
+.InsertColumndiv{
+	line-height: 20px;
+    background-color: #fff9fb;
+    border: 1px solid #0080FF;
+    font-size: 12px;
+    z-index: 999;
+    width: 350px;
+    height: auto;
+    margin-left: 50%;
+    margin-top: 40%;
+    left: -350px;
+    top: -550px;
+/*     margin-left: -150px!important; */
+/*     margin-top: -60px!important; */
+    /*margin-top: 0;*/
+    position: fixed!important;
+}
+.version{
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    width: 20%;
+    height: auto;
+}
+.timestamp{
+	
+}
+.value-textarea{
+    width:75%;
+    height:65%;
+    margin: 0px 5px 10px 10px;
+}
+
+.layer{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #2f2e2e;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity:0.5;/*其他，透明度50%*/
+}
+.layer2{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #2f2e2e;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity:0.5;/*其他，透明度50%*/
+}
+.layer3{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #2f2e2e;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity:0.5;/*其他，透明度50%*/
+}
+.page-header h1{
+    margin-left: 15px;
+    font-size: 30px;
+    color: #ABCDEF;
+}
+

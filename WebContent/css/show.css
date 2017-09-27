@@ -1,0 +1,99 @@
+@charset "UTF-8";
+body{
+	margin:0;
+    padding:0;
+    background-color: #F6F6F6;
+}
+#select{
+	display:block;
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	background:none;
+	border:1px solid #222;
+	outline:none;
+	padding:0 5px;
+	line-height:inherit;
+	color:inherit;
+	cursor:default;
+	font-size:14px;
+	position:relative;
+	z-index:3;
+}
+#select option{
+	color:#222;
+}
+#select option:hover{
+	color:#fff;
+}
+#select option:checked{
+	background:#535353;
+	color:#fff;
+}
+#selectStyle{
+	float:left;
+	margin-right:5px;
+	overflow:hidden;
+	height:26px;
+	width:20%;
+	border-radius:0;
+	/*background:#535353 url("箭头图片地址") right center no-repeat;*/
+	background-size:auto 80%;
+	/*color:#fff;*/
+	line-height:1;
+	/* 如果不想加图片，
+       则可以设置一个自己的三角形样式，
+       如下的自定义方式，
+       见代码1 */
+	position:relative;
+	z-index:1;
+}
+
+#div_body{
+	background-color: white;
+	margin:0;
+    padding:0;
+	width:80%;
+	margin:0 auto;
+	height:950px;
+}
+#div_top{
+	margin:0;
+    padding:0;
+	background-color: #0B7FAD;
+	height:50px;
+}
+#log{
+	color: white;
+	font-family:youyuan;
+	font-size:2.5em;
+	left:10px;
+	position:relative;
+}
+#div_link{
+	height:50px;
+	background-color:#F9F9F9;
+}
+#a_Home{
+	font-size:2.5em;
+	left:10px;
+	position:relative;
+}
+#div_query{
+	padding-top:5px;
+	margin-top:5px;
+
+}
+#btn_add{
+	right:60px;
+	position:relative;
+}
+.col1{
+	width:3%;
+}
+.col2{
+	
+}
+.col3{
+	width:10%;
+}
