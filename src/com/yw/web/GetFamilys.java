@@ -16,6 +16,7 @@ import com.yw.bean.FamilyBean;
  * Servlet implementation class GetFamilys
  */
 //@WebServlet("/GetFamilys")
+//WDZ 9/28
 public class GetFamilys extends HttpServlet {
 
 	/**
