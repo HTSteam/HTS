@@ -92,6 +92,7 @@ public class TableDao {
 					System.out.println("table is already exist");
 					return "table is already exist";
 				}
+
 				HTableDescriptor htdesc = new HTableDescriptor(tableName);
 				JSONArray cols_json = new JSONArray(cols);
 				for(int i = 0; i < cols_json.length(); i++) {
@@ -102,29 +103,29 @@ public class TableDao {
 					String key = (String)it.next();
 					String value = job.getString(key);
 					HColumnDescriptor hcdesc = new HColumnDescriptor(value);
-					while(it.hasNext()){
-						key = (String)it.next();
-						value = job.getString(key);
-						switch(key){
-							case "MaxVersion":
-								hcdesc.setMaxVersions(Integer.parseInt(value));
-								break;
-							case "MinVersion":
-								hcdesc.setMinVersions(Integer.parseInt(value));
-								break;
-							case "TimeToLive":
-								hcdesc.setTimeToLive(18000);
-								break;
-							case "Inmemory":
-								hcdesc.setInMemory(Boolean.getBoolean(value));
-								break;
-							case "BlockSize":
-								hcdesc.setBlocksize(Integer.parseInt(value));
-							case "ComressionType":
-//								hcdesc.setCompressionType();
-								break;
-						}
-					}
+//					while(it.hasNext()){
+//						key = (String)it.next();
+//						value = job.getString(key);
+//						switch(key){
+//							case "MaxVersion":
+//								hcdesc.setMaxVersions(Integer.parseInt(value));
+//								break;
+//							case "MinVersion":
+//								hcdesc.setMinVersions(Integer.parseInt(value));
+//								break;
+//							case "TimeToLive":
+//								hcdesc.setTimeToLive(18000);
+//								break;
+//							case "Inmemory":
+//								hcdesc.setInMemory(Boolean.getBoolean(value));
+//								break;
+//							case "BlockSize":
+//								hcdesc.setBlocksize(Integer.parseInt(value));
+//							case "ComressionType":
+////								hcdesc.setCompressionType();
+//								break;
+//						}
+//					}
 					htdesc.addFamily(hcdesc);
 				}
 				hbaseadmin.createTable(htdesc);

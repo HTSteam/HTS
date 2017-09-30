@@ -289,7 +289,6 @@
 				<div class="rowKey-value">rowKey:<%=row.getRowKey()%></div>
 				<div class="rowKey-value-ok hide"><span class="glyphicon glyphicon-ok-circle"></span></div>
 				<div class="tools hide">
-					<button class="glyphicon glyphicon-trash"></button>
 					<button class="glyphicon glyphicon-plus"></button>
 					<button class="glyphicon glyphicon-trash" onclick="deleteCell(this)"></button>
 				</div>

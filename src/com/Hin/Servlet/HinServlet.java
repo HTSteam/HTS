@@ -190,7 +190,7 @@ public class HinServlet extends HttpServlet {
         json = json.substring(0, json.length() - 1);
         json += "]";
         System.out.println(json);
-        response.getWriter().write(json);
+            response.getWriter().write(json);
     }
     protected void Search(HttpServletRequest request, HttpServletResponse response)throws Exception{
 		
