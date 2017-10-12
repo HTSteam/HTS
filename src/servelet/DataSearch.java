@@ -16,6 +16,7 @@ import utils.HbaseConnection;
 /**
  * Servlet implementation class DataSearch
  */
+//by wdz
 //@WebServlet("/DataSearch")
 public class DataSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
