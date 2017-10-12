@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page language="java" import="com.yw.Dao.TableDao"%>
@@ -16,6 +17,8 @@
 %>
 <script type="text/javascript">
     window.onload=function(){
+//        PagingManage($('#page'),100,10);
+
         <%if (familys != null) {%>
         $("#Structure_Modal").modal('toggle');
         $("#Show_TableName").val("<%=tablename%>");
@@ -133,7 +136,25 @@
 		</div>
 		<hr>
 		<div id="div_table">
-			<% ArrayList tablist = (ArrayList)session.getAttribute("tablist"); %>
+			<%--<c:set var="tableNum" value="${requestScope.tableNum}"/>--%>
+			<%--<c:set var="pageShowNum" value="${requestScope.pageShowNum}"/>--%>
+			<%--<c:set var="pageNum" value="${requestScope.pageNum}"/>--%>
+			<%--<c:set var="beginIndex" value="${requestScope.beginIndex}"/>--%>
+			<%--<c:set var="endIndex" value="${requestScope.endIndex}"/>--%>
+			<%--<c:set var="page" value="${requestScope.page}"/>--%>
+			<%--<c:set var="currentTables" value="${requestScope.tableList.subList(beginIndex, endIndex)}"/>--%>
+			<%--<p>${tableNum}</p>--%>
+			<%
+				ArrayList tablist = (ArrayList)session.getAttribute("tablist");
+				int tableNum = (int)session.getAttribute("tableNum");
+				int beginIndex = (int)session.getAttribute("beginIndex");
+				int endIndex = (int)session.getAttribute("endIndex");
+				int pageNum = (int)session.getAttribute("pageNum");
+				int currentPage = (int)session.getAttribute("page");
+				ArrayList currentTables = (ArrayList)session.getAttribute("tableList");
+				List test = currentTables.subList(beginIndex, endIndex);
+
+			%>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -144,44 +165,60 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% if(tablist==null||tablist.size()==0){ %>
-					<tr height="100">
-						<td colspan="3" align="center">数据库中还没有表！</td>
-					</tr>
-					<%
-						}else{
-							for(int i = 0; i<tablist.size();i++){
-								TableBean tab = (TableBean)tablist.get(i);
-								String status = tab.getStatus();
-					%>
-					<tr>
-						<td class="col1"><input type="checkbox" name="info"
-							id="<%=tab.getTableName()%>" onclick="dropcheck()"></td>
-						<td class="col2">
-							<a href="<%=path%>/hinServlet?action=showTable&tableName=<%=tab.getTableName() %>"><%=tab.getTableName() %></a>
-							<button class="btn btn-default pull-right" id=""
-									onclick="GetFamilys(this)" data-toggle="modal"
-									data-target="#Structure_Modal">查看表结构
-							</button>
-						</td>
-						<td class="col3">
-							<%
-								if(status == "Enable"){
-							%> <input type="checkbox" onclick="enable(this)"
-							name="<%=tab.getTableName() %>" checked="checked"> <% 
-								}else{
-							%> <input type="checkbox" onclick="enable(this)"
-							name="<%=tab.getTableName() %>"> <% 
-								}
-							%>
-						
-					</tr>
-					<%
-							}
+				<%
+					for(int i = 0; i < test.size(); i++) {
+					   TableBean tab = (TableBean)test.get(i);
+					   String status = tab.getStatus();
+
+				%>
+
+				<tr>
+					<td class="col1"><input type="checkbox" name="info"
+											id="<%=tab.getTableName()%>" onclick="dropcheck()"></td>
+					<td class="col2">
+						<a href="<%=path%>/hinServlet?action=showTable&tableName=<%=tab.getTableName() %>"><%=tab.getTableName() %></a>
+						<button class="btn btn-default pull-right" id=""
+								onclick="GetFamilys(this)" data-toggle="modal"
+								data-target="#Structure_Modal">查看表结构
+						</button>
+					</td>
+					<td class="col3">
+						<%
+							if(status == "Enable"){
+						%> <input type="checkbox" onclick="enable(this)"
+								  name="<%=tab.getTableName() %>" checked="checked"> <%
+					}else{
+					%> <input type="checkbox" onclick="enable(this)"
+							  name="<%=tab.getTableName() %>"> <%
 						}
 					%>
+					</td>
+				</tr>
+				<%}%>
 				</tbody>
 			</table>
+		</div>
+
+		<div id="page">
+		<%if(pageNum > 1){%>
+			<nav aria-label="Page navigation">
+				<ul class="pagination">
+					<li>
+						<a href="/index?page=<%=currentPage - 1%>" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<%for(int i = 0; i < pageNum; i++){%>
+					<li><a href="/index?page=<%=i + 1%>"><%=i + 1%></a></li>
+					<%}%>
+					<li>
+						<a href="/index?page=<%=currentPage + 1%>" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		<%}%>
 		</div>
 	</div>
 	

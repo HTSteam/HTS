@@ -100,7 +100,6 @@ function submit(){
         });
 	    cols_json = cols_json.substring(0, cols_json.length - 1);
         cols_json += "]";
-        alert(cols_json);
         //cols_json = "{'tableName':'test'}";
         $.ajax({
             type: "POST",
@@ -111,7 +110,7 @@ function submit(){
 
             // contentType: "application/json",
             success: function (data) {
-                alert("success");
+                alert(data.value);
             },
             error: function () {
                 alert("error");

@@ -62,3 +62,91 @@ function addbtn(){
 	var url="AddTable.jsp"
 	window.location.href=url;
 }
+
+function test(){
+	alert("test");
+}
+// //控制表级分页
+// function PagingManage(obj, pageCount, pageSize, currentPage){
+// 	if(obj){
+// 		var dataCount = pageCount;
+// 		var pageSize = pageSize;
+// 		var currentPage = currentPage;
+// 		var pageNum;
+// 		var showPageNum = 6;
+//
+// 		var pagehtml = "";
+// 		var divId = "" + obj.attr('id');
+//
+// 		 if(dataCount % pageSize == 0){
+// 		 	pageNum = parseInt(dataCount / pageSize)
+// 		 }else
+// 		 	pageNum = parseInt(dataCount / pageSize) + 1;
+//
+// 		 if(pageNum > 1){
+// 		 	pagehtml += "<nav aria-label='Page navigation'>" +
+//              "<ul class='pagination'>" +
+//                  "<li>" +
+//                  "<a href='#' aria-label='Previous'>" +
+//                  "<span aria-hidden='true'>&laquo;</span>" +
+//              "</a>" +
+//              "</li>";
+// 		 	for(var i = 0; i < pageNum; i++){
+// 		 		pagehtml += "<li><a href='#'>" + i + "</a></li>";
+// 			 }
+// 		 	pagehtml += "<li>" +
+//              "<a href='#' aria-label='Next'>" +
+//              "<span aria-hidden='true'>&raquo;</span>" +
+//              "</a>" +
+//              "</li>" +
+//              "</ul>" +
+//              "</nav>";
+// 		 }
+// 		 // if(pageNum > 1){
+// 		 // 	pagehtml += '<li>' +
+// 			// 	'<a href="javascript:void(0);" onclick="switchPage(\'' + divId + '\',' + (currentPage -1)+ ')">' +
+// 			// 	'上一页' +
+// 			// 	'</a>' +
+// 			// 	'</li>'
+// 		 // }
+// 		 // var startPage = 1;
+// 		 // if(showPageNum > pageNum){
+// 		 // 	startPage = 1;
+// 		 // }else{
+// 		 // 	if(currentPage - (showPageNum / 2) <= 0){
+// 		 // 		startPage = 1;
+// 			// }else if(currentPage + (showPageNum / 2) >= pageNum){
+// 		 // 		startPage = pageNum - showPageNum;
+// 			// }else{
+// 			// 	startPage = currentPage - (showPageNum / 2);
+// 			// }
+// 		 // }
+//          //
+// 		 // startPage = parseInt(startPage);
+//          //
+// 		 // for(var i = startPage; i < (startPage + showPageNum); i++){
+// 		 // 	if(i > pageNum){
+// 		 // 		break;
+// 			// }
+// 			// if(i == currentPage){
+// 		 // 		pagehtml += '<li class="active">' +
+// 			// 	'<a href="javascript:void(0);" onclick="switchPage(\'' + divId + '\',' + i +')">' + i + '</a>' +
+// 			// 	'</li>';
+// 			// }else{
+// 			// 	pagehtml += '<li>' +
+//           //           '<a href="javascript:void(0);" onclick="switchPage(\'' + divId + '\',' + i +')">' + i + '</a>' +
+//           //           '</li>';
+// 			// }
+// 		 // }
+//          //
+// 		 // if(currentPage < pageNum){
+// 		 // 	pagehtml += '<li>' +
+//           //       '<a href="javascript:void(0);" onclick="switchPage(\'' + divId + '\',' + i +')">下一页</a>' +
+//           //       '</li>';
+// 		 // }
+// 	}
+// 	obj.html(pagehtml);
+// }
+
+
+// PagingManage($('#page'), 100, 10, 1);

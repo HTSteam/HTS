@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.soap.Text;
 import javax.xml.ws.spi.http.HttpContext;
 
 import com.yw.util.StringUtil;
@@ -32,16 +33,10 @@ public class AddTableServlet extends HttpServlet{
 		String tableName = request.getParameter("tableName");
 		String tableInfo = request.getParameter("tableInfo");
 
-		String message;
-		if(TableDao.createTable(tableName, tableInfo).equals("success")){
-			message="建表成功！";
-			System.out.println(message);
-
-			String success = "{\"status\":\"success\"}";
-			response.getWriter().write(success);
-
-			System.out.println(message);
-		}
+		String message = TableDao.createTable(tableName, tableInfo);
+		message = "{\"message\":" + "\"" +message + "\"" + "}";
+		System.out.println(message);
+		response.getWriter().write(message);
 
 	}
 }

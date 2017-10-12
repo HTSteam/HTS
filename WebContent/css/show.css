@@ -97,3 +97,7 @@ body{
 .col3{
 	width:10%;
 }
+
+#page ul{
+	vertical-align: middle;
+}

@@ -257,7 +257,7 @@
 			<div class="navbar-header">
 				<span class="headline-item" href="#"> <img alt="Brand"
 					src="<%=path%>/img/letter-h.png" width="12%">
-				</span> <a class="headline-item" href="allTables.jsp">Home</a> <a
+				</span> <a class="headline-item" onclick="history.back()">Home</a> <a
 					class="headline-item">/<%=table.getTableName()%></a>
 			</div>
 		</div>
